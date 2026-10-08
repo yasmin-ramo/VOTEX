@@ -1,0 +1,40 @@
+/*
+  MC 2026 — font loading
+  ----------------------------------------------------------------------------
+  The UI always asks for two families:
+     "MC Sans"    → English  (official: Nexa)
+     "MC Arabic"  → Arabic   (official: HelveticaNeue LT Arabic)
+  The browser picks per character, so mixed English/Arabic text just works.
+
+  ► The files below are open-licensed STAND-INS (Outfit + IBM Plex Sans Arabic,
+    both SIL OFL — see /fonts/LICENSE-*.txt) so the app looks right out of the box.
+  ► To switch to the official brand fonts:
+      1. Convert the licensed Nexa / HelveticaNeue LT Arabic files to .woff2
+         (e.g. https://transfonter.org or `woff2_compress`), copy them into /public/fonts/
+      2. Delete the "STAND-IN" blocks and un-comment the "OFFICIAL" blocks (adjust file names).
+      Nothing else in the project needs to change. (.otf/.ttf also work: change the
+      format() hint and the file extension — the server serves them.)
+  Tip: font files are cached for a year — give the new files new names.
+*/
+
+/* ===== STAND-IN: English (variable weight 100–900) ===== */
+@font-face{font-family:"MC Sans";src:url(/fonts/standin-outfit-var.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+
+/* ===== STAND-IN: Arabic ===== */
+@font-face{font-family:"MC Arabic";src:url(/fonts/standin-plex-arabic-400.woff2) format("woff2");font-weight:300 450;font-style:normal;font-display:swap}
+@font-face{font-family:"MC Arabic";src:url(/fonts/standin-plex-arabic-500.woff2) format("woff2");font-weight:451 650;font-style:normal;font-display:swap}
+@font-face{font-family:"MC Arabic";src:url(/fonts/standin-plex-arabic-700.woff2) format("woff2");font-weight:651 900;font-style:normal;font-display:swap}
+
+/* ===== OFFICIAL: Nexa (example mapping — rename to your files) =====
+@font-face{font-family:"MC Sans";src:url(/fonts/Nexa-Light.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"MC Sans";src:url(/fonts/Nexa-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"MC Sans";src:url(/fonts/Nexa-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"MC Sans";src:url(/fonts/Nexa-Heavy.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"MC Sans";src:url(/fonts/Nexa-Black.woff2) format("woff2");font-weight:900;font-display:swap}
+*/
+
+/* ===== OFFICIAL: HelveticaNeue LT Arabic (example mapping) =====
+@font-face{font-family:"MC Arabic";src:url(/fonts/HelveticaNeueLTArabic-Light.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"MC Arabic";src:url(/fonts/HelveticaNeueLTArabic-Roman.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:"MC Arabic";src:url(/fonts/HelveticaNeueLTArabic-Bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
+*/

@@ -1,0 +1,13 @@
+{
+  "name": "mc2026-voting",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Maker Collective 2026 Community Awards — live voting system (zero dependencies, Node 22.13+)",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
